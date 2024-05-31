@@ -1,0 +1,13 @@
+apiVersion: skaffold/v4beta11
+kind: Config
+metadata:
+  name: skaffold-gitops
+build:
+  artifacts:
+    - image: bluepe/hello-go
+      docker:
+        dockerfile: Dockerfile
+manifests:
+  rawYaml:
+    - deployment.yaml
+    - service.yaml
